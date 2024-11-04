@@ -8,6 +8,7 @@ from django.http import HttpResponseRedirect
 from .forms import AnnouncementForm, AssignmentForm, MaterialForm
 from django import forms
 from django.core import validators
+from django.views.decorators.csrf import csrf_exempt
 
 
 from django import forms
@@ -35,6 +36,7 @@ def is_faculty_authorised(request, code):
 
 
 # Custom Login page for both student and faculty
+@csrf_exempt
 def std_login(request):
     error_messages = []
 
